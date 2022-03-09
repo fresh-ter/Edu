@@ -23,30 +23,40 @@ int getMin(int i, int j, int val) {
 }
 
 bool isLocMin(int i, int j) {
-    int min_val = a[i][j];
+    int min_val;
 
     if(i==0 && j==0) {
+        min_val = a[i][j+1];
+
         min_val = getMin(i, j+1, min_val);
         min_val = getMin(i+1, j+1, min_val);
         min_val = getMin(i+1, j, min_val);
     }
     else if(i==9 && j==9) {
+        min_val = a[i][j-1];
+
         min_val = getMin(i, j-1, min_val);
         min_val = getMin(i-1, j-1, min_val);
         min_val = getMin(i-1, j, min_val);
     }
     else if(i==0 && j==9) {
+        min_val = a[i+1][j];
+
         min_val = getMin(i+1, j, min_val);
         min_val = getMin(i+1, j-1, min_val);
         min_val = getMin(i, j-1, min_val);
     }
     else if(i==9 && j==0) {
+        min_val = a[i-1][j];
+
         min_val = getMin(i-1, j, min_val);
         min_val = getMin(i-1, j+1, min_val);
         min_val = getMin(i, j+1, min_val);
     }
         // top
     else if(i==0) {
+        min_val = a[i][j+1];
+
         min_val = getMin(i, j+1, min_val);
         min_val = getMin(i+1, j+1, min_val);
         min_val = getMin(i+1, j, min_val);
@@ -55,6 +65,8 @@ bool isLocMin(int i, int j) {
     }
         // down
     else if(i==9) {
+        min_val = a[i][j-1];
+
         min_val = getMin(i, j-1, min_val);
         min_val = getMin(i-1, j-1, min_val);
         min_val = getMin(i-1, j, min_val);
@@ -63,6 +75,8 @@ bool isLocMin(int i, int j) {
     }
         //left
     else if(j==0) {
+        min_val = a[i-1][j];
+
         min_val = getMin(i-1, j, min_val);
         min_val = getMin(i-1, j+1, min_val);
         min_val = getMin(i, j+1, min_val);
@@ -71,6 +85,8 @@ bool isLocMin(int i, int j) {
     }
         //right
     else if(j==9) {
+        min_val = a[i+1][j];
+
         min_val = getMin(i+1, j, min_val);
         min_val = getMin(i+1, j-1, min_val);
         min_val = getMin(i, j-1, min_val);
@@ -78,6 +94,8 @@ bool isLocMin(int i, int j) {
         min_val = getMin(i-1, j, min_val);
     }
     else {
+        min_val = a[i-1][j];
+
         min_val = getMin(i-1, j, min_val);
         min_val = getMin(i-1, j+1, min_val);
         min_val = getMin(i, j+1, min_val);
@@ -89,7 +107,7 @@ bool isLocMin(int i, int j) {
         min_val = getMin(i-1, j-1, min_val);
     }
 
-    if(a[i][j] == min_val)
+    if(a[i][j] < min_val)
         return true;
     else
         return false;
@@ -126,6 +144,8 @@ int main()
     cin >> i;
     cout << "Enter j: ";
     cin >> j;
+//    cout << endl << "testElement: " << a[9][0] << endl << endl;
+    cout << endl << "Element: " << a[i][j] << endl << endl;
     cout << "isLocMin: " << isLocMin(i,j) << endl << endl;
 
     //cout << "Hello world!" << endl;
