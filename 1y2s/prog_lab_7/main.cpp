@@ -123,7 +123,7 @@ int main()
         }
         cout << endl;
     }
-    cout << endl << endl;
+    cout << endl;
 
     int locMinCounter = 0;
     for(int i=0;i<10;i++)
@@ -139,15 +139,35 @@ int main()
     int i,j;
 
     cout << "Number of locMin: " << locMinCounter << endl;
+    cout << endl;
+
+    int sum = 0;
+
+    int x = 1;
+    int y = 0;
+
+    for(; y < 10; y++)
+    {
+        for(;x<10;x++)
+        {
+            cout << a[y][x] << ' ';
+            sum += a[y][x];
+        }
+        cout << endl;
+        x = 1 + y + 1;
+    }
+
+    cout << "Sum: " << sum << endl;
+    cout << endl;
 
     cout << "Enter i: ";
     cin >> i;
     cout << "Enter j: ";
     cin >> j;
-//    cout << endl << "testElement: " << a[9][0] << endl << endl;
-    cout << endl << "Element: " << a[i][j] << endl << endl;
+    cout << endl;
+
+    cout << "Element: " << a[i][j] << endl << endl;
     cout << "isLocMin: " << isLocMin(i,j) << endl << endl;
 
-    //cout << "Hello world!" << endl;
     return 0;
 }
