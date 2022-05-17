@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 55.0
+margin_top = 44.0
+margin_right = 253.0
+margin_bottom = 84.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileButton" type="Button" parent="HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 40.0
+text = "File"
+
+[node name="AnimateButton" type="Button" parent="HBoxContainer"]
+margin_left = 39.0
+margin_right = 105.0
+margin_bottom = 40.0
+text = "Animate"
+
+[node name="AboutButton" type="Button" parent="HBoxContainer"]
+margin_left = 109.0
+margin_right = 159.0
+margin_bottom = 40.0
+text = "About"
+
+[node name="ExitButton" type="Button" parent="HBoxContainer"]
+margin_left = 163.0
+margin_right = 198.0
+margin_bottom = 40.0
+text = "Exit"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_right = 416.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 400, 140 )
+window_title = "Открыть файл"
+mode = 0
+access = 2
+current_dir = "/Projects/edu/1y2s/prog_lab_12"
+current_path = "/Projects/edu/1y2s/prog_lab_12/"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_right = 55.0
+margin_bottom = 58.0
+window_title = "Внимание!"
+dialog_text = "Programmer: Admin
+
+2022"
+
+[connection signal="pressed" from="HBoxContainer/FileButton" to="." method="_on_FileButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/AboutButton" to="." method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
