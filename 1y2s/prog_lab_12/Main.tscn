@@ -46,9 +46,10 @@ text = "Exit"
 margin_right = 416.0
 margin_bottom = 184.0
 rect_min_size = Vector2( 400, 140 )
-window_title = "Открыть файл"
+window_title = "Open a File"
 mode = 0
 access = 2
+filters = PoolStringArray( "*.txt ; Text Files" )
 current_dir = "/Projects/edu/1y2s/prog_lab_12"
 current_path = "/Projects/edu/1y2s/prog_lab_12/"
 
@@ -59,6 +60,37 @@ window_title = "Внимание!"
 dialog_text = "Programmer: Admin
 
 2022"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 109.0
+margin_top = 254.0
+margin_right = 149.0
+margin_bottom = 294.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 550.0
+margin_bottom = 14.0
+text = "Before conversion:"
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 550.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 550, 100 )
+readonly = true
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_top = 122.0
+margin_right = 550.0
+margin_bottom = 136.0
+text = "After conversion:"
+
+[node name="TextEdit2" type="TextEdit" parent="VBoxContainer"]
+margin_top = 140.0
+margin_right = 550.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 550, 100 )
+readonly = true
 
 [connection signal="pressed" from="HBoxContainer/FileButton" to="." method="_on_FileButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/AboutButton" to="." method="_on_AboutButton_pressed"]

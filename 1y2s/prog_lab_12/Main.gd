@@ -22,6 +22,9 @@ func _on_FileDialog_file_selected(path: String) -> void:
 	var file = File.new()
 	file.open(filepath, file.READ)
 	var content = file.get_as_text()
+	
+	$VBoxContainer/TextEdit.text = content
+	
 	print (content)
 	file.close()
 
