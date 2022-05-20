@@ -28,6 +28,16 @@ func _on_FileDialog_file_selected(path: String) -> void:
 	$VBoxContainer/TextEdit.text = content
 	
 	print(content)
+
+
+func _on_AboutButton_pressed() -> void:
+	$AcceptDialog.popup_centered()
+
+
+func _on_AnimateButton_pressed() -> void:
+	var content = $VBoxContainer/TextEdit.text
+	
+	print(content)
 	
 	var arr = content.split(" ")
 	print(arr)
@@ -44,7 +54,3 @@ func _on_FileDialog_file_selected(path: String) -> void:
 	print(content_2)
 	
 	$VBoxContainer/TextEdit2.text = content_2
-
-
-func _on_AboutButton_pressed() -> void:
-	$AcceptDialog.popup_centered()

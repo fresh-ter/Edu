@@ -93,6 +93,7 @@ rect_min_size = Vector2( 550, 100 )
 readonly = true
 
 [connection signal="pressed" from="HBoxContainer/FileButton" to="." method="_on_FileButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/AnimateButton" to="." method="_on_AnimateButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/AboutButton" to="." method="_on_AboutButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
