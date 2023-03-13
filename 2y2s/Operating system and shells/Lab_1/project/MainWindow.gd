@@ -73,3 +73,13 @@ func _exit_tree():
 	thread1.wait_to_finish()
 	thread2.wait_to_finish()
 	thread3.wait_to_finish()
+
+
+func _on_ButtonSaveToFile_pressed() -> void:
+	$FileDialog.popup_centered()
+
+
+func _on_FileDialog_file_selected(path: String) -> void:
+	print(path)
+	OS.execute("echo test > "+path, [])
+	pass # Replace with function body.
