@@ -1,0 +1,139 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://MainWindow.gd" type="Script" id=1]
+
+[node name="MainWindow" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -286.5
+margin_top = 97.0
+margin_right = 286.5
+margin_bottom = 199.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 573.0
+margin_bottom = 102.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 573.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 112.0
+margin_top = 5.0
+margin_right = 276.0
+margin_bottom = 19.0
+text = "Decimal number (6-digit):"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 280.0
+margin_right = 460.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 180, 0 )
+
+[node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 573.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 573.0
+margin_bottom = 102.0
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 211.0
+margin_right = 361.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+text = "Calculate"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -278.0
+margin_top = -21.0
+margin_right = 278.0
+margin_bottom = 21.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+margin_right = 556.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
+margin_right = 180.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer2"]
+margin_right = 180.0
+margin_bottom = 14.0
+text = "Binary:"
+align = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer2/HBoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 180, 0 )
+editable = false
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer2/HBoxContainer"]
+margin_left = 184.0
+margin_right = 184.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
+margin_left = 188.0
+margin_right = 368.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer8"]
+margin_right = 180.0
+margin_bottom = 14.0
+text = "Octal:"
+align = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer2/HBoxContainer/VBoxContainer8"]
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 180, 0 )
+editable = false
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="MarginContainer2/HBoxContainer"]
+margin_left = 372.0
+margin_right = 372.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer16" type="VBoxContainer" parent="MarginContainer2/HBoxContainer"]
+margin_left = 376.0
+margin_right = 556.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="MarginContainer2/HBoxContainer/VBoxContainer16"]
+margin_right = 180.0
+margin_bottom = 14.0
+text = "Hexadecimal:"
+align = 1
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer2/HBoxContainer/VBoxContainer16"]
+margin_top = 18.0
+margin_right = 180.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 180, 0 )
+editable = false
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_Button_pressed"]
