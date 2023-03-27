@@ -90,4 +90,49 @@ public class Vector {
             }
         }
     }
+
+    boolean isUniform(Vector x) {
+        if(this.get_length() == x.get_length()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public void mul(int n) {
+        for(int x=0; x<this.get_length(); x++) {
+            this.vector[x] *= n;
+        }
+    }
+
+    public void sum(Vector x) {
+        if(this.isUniform(x)) {
+            for(int i=0;i<this.get_length();i++) {
+                this.vector[i] += x.get(i);
+            }
+        }
+    }
+
+    public int mul_scalar(Vector x) {
+        int s = 0;
+        
+        if(this.isUniform(x)) {
+            s = 0;
+
+            for(int i=0;i<this.get_length();i++) {
+                this.vector[i] *= x.get(i);
+            }
+
+            for(int i=0;i<this.get_length();i++) {
+                s += this.get(i);
+            }
+        }
+
+        return s;
+    }
+
+    public void print_mul_scalar(Vector x) {
+        System.out.println("MulScalar: " + this.mul_scalar(x));
+    }
 }

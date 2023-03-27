@@ -17,6 +17,25 @@ public class App {
         v.print();
         v.sort_asc();
         v.print();
+        v.mul(2);
+        v.print();
+
+        Vector v2 = new Vector(5);
+        for(int c=0;c<5;c++) {
+            v2.set(1,c);
+        }
+        v2.print();
+
+        v.sum(v2);
+        v.print();
+
+        Vector v3 = new Vector(5);
+        for(int c=0;c<5;c++) {
+            v3.set(2,c);
+        }
+        v3.print();
+
+        v.print_mul_scalar(v3);
     }
 }
 
