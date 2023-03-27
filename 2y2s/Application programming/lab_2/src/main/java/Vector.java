@@ -114,7 +114,7 @@ public class Vector {
         }
     }
 
-    public int mul_scalar(Vector x) {
+    public int get_mul_scalar(Vector x) {
         int s = 0;
         
         if(this.isUniform(x)) {
@@ -133,6 +133,23 @@ public class Vector {
     }
 
     public void print_mul_scalar(Vector x) {
-        System.out.println("MulScalar: " + this.mul_scalar(x));
+        System.out.println("MulScalar: " + this.get_mul_scalar(x));
+    }
+
+    public double get_norm() {
+        double n = 0;
+        int s = 0;
+
+        for(int x: this.vector) {
+            s += x*x;
+        }
+
+        n = Math.sqrt(s);
+
+        return n;
+    }
+
+    public void print_norm() {
+        System.out.println("Norm: " + this.get_norm());
     }
 }

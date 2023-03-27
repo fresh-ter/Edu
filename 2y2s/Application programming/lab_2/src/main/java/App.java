@@ -36,6 +36,10 @@ public class App {
         v3.print();
 
         v.print_mul_scalar(v3);
+
+        v.print();
+        
+        v.print_norm();
     }
 }
 
