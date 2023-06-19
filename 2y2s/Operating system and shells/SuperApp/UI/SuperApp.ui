@@ -14,16 +14,39 @@
    <string>SupperApp</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_explorer">
        <attribute name="title">
         <string>Explorer</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="lineEditCD"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonCD">
+            <property name="text">
+             <string>Открыть директорию...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listWidgetLS">
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="tab_terminal">
        <attribute name="title">
@@ -227,6 +250,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButtonCD</sender>
+   <signal>pressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>700</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidgetLS</sender>
+   <signal>customContextMenuRequested(QPoint)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>customListMenu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidgetLS</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>itemDClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>399</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>showAbout()</slot>
@@ -234,5 +305,8 @@
   <slot>showVirtMem()</slot>
   <slot>showCurrentTime()</slot>
   <slot>termInput()</slot>
+  <slot>changeDirectory()</slot>
+  <slot>customListMenu()</slot>
+  <slot>itemDClicked()</slot>
  </slots>
 </ui>
