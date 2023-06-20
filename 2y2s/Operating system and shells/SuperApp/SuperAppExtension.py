@@ -50,17 +50,25 @@ class SuperAppExtension(QMainWindow, design.Ui_MainWindow):
         self.textEdit.clear()
         self.textEdit.insertPlainText(s)
 
+        with open('superapp.log', 'a') as f:
+            f.write('users: ' + s + '\n')
+
+
     def showVirtMem(self):
-        print(32)
         s = str(psutil.virtual_memory().percent)
         self.textEdit.clear()
         self.textEdit.insertPlainText(s)
-        print(322)
+
+        with open('superapp.log', 'a') as f:
+            f.write('virtmem: ' + s + '\n')
 
     def showCurrentTime(self):
         s = str(datetime.now().time())
         self.textEdit.clear()
         self.textEdit.insertPlainText(s)
+
+        with open('superapp.log', 'a') as f:
+            f.write('currenttime: ' + s + '\n')
 
 
 

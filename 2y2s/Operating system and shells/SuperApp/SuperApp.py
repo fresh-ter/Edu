@@ -175,8 +175,6 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
     def actionDelete(self):
         d = self.getDataForCurrentItem()
 
-        print(2, d)
-
         if 'SuperApp/System' in d[1]:
             return
 
