@@ -135,6 +135,9 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
     def actionMoveToTrash(self):
         d = self.getDataForCurrentItem()
 
+        if 'SuperApp/System' in d[1]:
+            return
+
         if d[0] == 'f':
             shutil.move(d[1], '../Trash/')
         elif d[0] == 'd':
@@ -143,7 +146,19 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
         self.openDirectory(self.getCurrentDirname())
 
     def actionDelete(self):
-        print(2, self.getNameFromSelected())
+        d = self.getDataForCurrentItem()
+
+        print(2, d)
+
+        if 'SuperApp/System' in d[1]:
+            return
+
+        if d[0] == 'f':
+            os.remove(d[1])
+        elif d[0] == 'd':
+            shutil.rmtree(d[1]+'/')
+
+        self.openDirectory(self.getCurrentDirname())
 
     def customListMenu(self, point):
         action1 = QAction('Move to Trash', self)
