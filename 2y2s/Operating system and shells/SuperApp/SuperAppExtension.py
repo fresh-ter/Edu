@@ -10,6 +10,9 @@ from PyQt5.QtWidgets import (
     QVBoxLayout,
     QMainWindow,
 )
+from PyQt5.QtCore import (
+    QTimer,
+)
 
 import UI.SuperAppExtensionUI as design
 
@@ -24,7 +27,6 @@ class SuperAppExtension(QMainWindow, design.Ui_MainWindow):
 
         self.processMem()
 
-
     def processMem(self):
         a = shared_memory.SharedMemory(name='test')
         q = a.buf[0]
@@ -34,9 +36,13 @@ class SuperAppExtension(QMainWindow, design.Ui_MainWindow):
         if q == 1:
             self.showUsers()
         elif q == 2:
-            self.showVirtMem()
+            timer = QTimer(self)
+            timer.timeout.connect(self.showVirtMem)
+            timer.start(1000)
         elif q == 3:
-            self.showCurrentTime()
+            timer = QTimer(self)
+            timer.timeout.connect(self.showCurrentTime)
+            timer.start(1000)
 
     def showUsers(self):
         a = pwd.getpwall()
@@ -45,9 +51,11 @@ class SuperAppExtension(QMainWindow, design.Ui_MainWindow):
         self.textEdit.insertPlainText(s)
 
     def showVirtMem(self):
+        print(32)
         s = str(psutil.virtual_memory().percent)
         self.textEdit.clear()
         self.textEdit.insertPlainText(s)
+        print(322)
 
     def showCurrentTime(self):
         s = str(datetime.now().time())
@@ -58,6 +66,9 @@ class SuperAppExtension(QMainWindow, design.Ui_MainWindow):
 
 
 def main():
+    with open('superapp.log', 'a') as f:
+        f.write(sys.argv[0] + ' ' + str(datetime.now()) + '\n')
+
     app = QApplication(sys.argv)
     window = SuperAppExtension()
     window.show()

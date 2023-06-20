@@ -1,7 +1,7 @@
 #!/bin/bash
-source env/bin/activate
-pyinstaller -F SuperApp.py
-pyinstaller -F SuperAppExtension.py
 
-cp dist/SuperApp SuperApp/System/
-cp dist/SuperAppExtension SuperApp/System/
+cp UI/SuperAppUI.py SuperApp/System/UI/SuperAppUI.py
+cp UI/SuperAppExtensionUI.py SuperApp/System/UI/SuperAppExtensionUI.py
+
+cp SuperApp.py SuperApp/System/SuperApp.py
+cp SuperAppExtension.py SuperApp/System/SuperAppExtension.py

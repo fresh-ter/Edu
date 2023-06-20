@@ -4,6 +4,7 @@ from multiprocessing import shared_memory, freeze_support
 import subprocess
 import re
 import shutil
+from datetime import datetime
 
 from PyQt5.QtWidgets import (
     QApplication,
@@ -17,6 +18,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import (
     QStringListModel,
+    QProcess,
 )
 from PyQt5.QtGui import (
     QCursor
@@ -45,6 +47,27 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
         dlg.setLayout(layout)
         dlg.exec()
 
+    def showHelp(self):
+        dlg = QDialog(self)
+        dlg.setWindowTitle("About")
+        dlg.resize(200, 100)
+
+        s = "Справка\n\n"
+        s += 'Вывод информации о пользователях системы: Ctrl+1\n'
+        s += 'Вывод информации о занятой виртуальной памяти: Ctrl+2\n'
+        s += 'Вывод информации о текущем местном времени: Ctrl+3\n'
+        s += 'Запуск Konsole: Ctrl+K\n'
+        s += 'Запуск Dolphine: Ctrl+D\n'
+        s += 'Запуск системного монитора: Ctrl+M\n'
+
+        message = QLabel(s)
+
+        layout = QVBoxLayout()
+        layout.addWidget(message)
+
+        dlg.setLayout(layout)
+        dlg.exec()
+
     def showUsersList(self):
         a = shared_memory.SharedMemory(
             name='test',
@@ -54,7 +77,7 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
         a.buf[0] = 1
         a.close()
 
-        os.system("xterm -e './SuperAppExtension' &")
+        os.system("python3 SuperAppExtension.py &")
 
     def showVirtMem(self):
         a = shared_memory.SharedMemory(
@@ -65,14 +88,18 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
         a.buf[0] = 2
         a.close()
         
-        os.system("xterm -e './SuperAppExtension' &")
+        os.system("python3 SuperAppExtension.py &")
 
     def showCurrentTime(self):
-        a = shared_memory.SharedMemory(name='test', create=True, size=1)
+        a = shared_memory.SharedMemory(
+            name='test',
+            create=True,
+            size=1
+        )
         a.buf[0] = 3
         a.close()
         
-        os.system("xterm -e './SuperAppExtension' &")
+        os.system("python3 SuperAppExtension.py &")
 
     def termInput(self):
         sIn = self.lineEdit_termIn.text()
@@ -175,9 +202,20 @@ class SuperApp(QMainWindow, design.Ui_MainWindow):
     def itemDClicked(self):
         print("Click")
 
+    def dolphinRun(self):
+        os.system("dolphin &")
+
+    def monitorRun(self):
+        os.system("plasma-systemmonitor &")
+
+    def konsoleRun(self):
+        os.system("konsole &")
 
 
 def main():
+    with open('superapp.log', 'a') as f:
+        f.write(sys.argv[0] + ' ' + str(datetime.now()) + '\n')
+
     freeze_support()
     app = QApplication(sys.argv)
     window = SuperApp()

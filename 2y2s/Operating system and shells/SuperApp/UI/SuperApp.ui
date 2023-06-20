@@ -87,6 +87,7 @@
      <string>Меню</string>
     </property>
     <addaction name="actionAboutShow"/>
+    <addaction name="actionHelp"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
@@ -102,7 +103,9 @@
     <property name="title">
      <string>Системные утилиты</string>
     </property>
-    <addaction name="actionTerminalRun"/>
+    <addaction name="actionKonsoleRun"/>
+    <addaction name="actionMonitorRun"/>
+    <addaction name="actionDolphinRun"/>
    </widget>
    <addaction name="menuMain"/>
    <addaction name="menuFunctions"/>
@@ -146,9 +149,33 @@
     <string>Ctrl+3</string>
    </property>
   </action>
-  <action name="actionTerminalRun">
+  <action name="actionKonsoleRun">
    <property name="text">
-    <string>Terminal</string>
+    <string>Konsole</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+K</string>
+   </property>
+  </action>
+  <action name="actionMonitorRun">
+   <property name="text">
+    <string>Системный монитор</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionDolphinRun">
+   <property name="text">
+    <string>Dolphin</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Справка</string>
    </property>
   </action>
  </widget>
@@ -298,6 +325,70 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionDolphinRun</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>dolphinRun()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionKonsoleRun</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>konsoleRun()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMonitorRun</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>monitorRun()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHelp</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>showAbout()</slot>
@@ -308,5 +399,9 @@
   <slot>changeDirectory()</slot>
   <slot>customListMenu()</slot>
   <slot>itemDClicked()</slot>
+  <slot>dolphinRun()</slot>
+  <slot>konsoleRun()</slot>
+  <slot>monitorRun()</slot>
+  <slot>showHelp()</slot>
  </slots>
 </ui>
