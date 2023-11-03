@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<group>
+    <student 
+        firstname="Terminator"
+        lastname="Fresh"
+        groupnumber="1">
+        <subject title="Java" mark="4" />
+        <subject title="Java" mark="5" />
+        <average>1</average>
+    </student>
+
+    <student 
+        firstname="User"
+        lastname=""
+        groupnumber="1">
+        <subject title="Java" mark="5" />
+        <subject title="Java" mark="5" />
+        <average>1</average>
+    </student>
+</group>
