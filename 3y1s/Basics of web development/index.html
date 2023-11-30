@@ -2,9 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <title> My tasks </title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>My tasks</h1>
+    <h1 class="title">My tasks</h1>
     <!-- <div class="task-list">
         <div class="task">
             <div class="task-number">1</div>
@@ -13,29 +15,33 @@
             <div class="task-flag"><input type="checkbox">Comlete</button></div>
         </div>
     </div> -->
-    <a href="addNewTask.html" target="_blank">
-        <button>Add new task...</button>
+    <a href="addNewTask.html" target="_blank" class="center">
+        <button class="button">Add new task...</button>
     </a>
-    <table>
+    <table class="center tasks-table">
         <tr>
             <th>№</th>
             <th>Text</th>
             <th>Completed</th>
             <th>Option</th>
         </tr>
-        <tr>
+        <tr class="row-1">
             <td>1</td>
             <td>Some text</td>
-            <td><input type="checkbox"></td>
+            <td>
+                <div class="checkbox-rect">
+                    <input type="checkbox">
+                </div>
+            </td>
             <td><button>Delete</button></td>
         </tr>
-        <tr>
+        <tr class="row-2">
             <td>2</td>
             <td>Some text 2</td>
             <td><input type="checkbox"></td>
             <td><button>Delete</button></td>
         </tr>
-        <tr>
+        <tr class="row-1">
             <td>3</td>
             <td>Some text 3</td>
             <td><input type="checkbox"></td>

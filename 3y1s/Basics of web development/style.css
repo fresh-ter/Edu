@@ -1,0 +1,80 @@
+.title {
+	text-align: center;
+	color: red;
+	font-size: 50;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.center textarea {
+	color: red;
+	border-color: green;
+	border-radius: 100px;
+	text-align: center;
+	padding: 20px;
+}
+
+#text {
+	padding: 20px;
+}
+
+.button {
+	background-color: red;
+	color: yellow;
+	width: 150px;
+	height: 50px;
+}
+
+.tasks-table {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.tasks-table th {
+	padding: 10px 40px;
+	background-color: gray;
+	color: white;
+}
+
+.row-1 {
+	background-color: red;
+	color: yellow;
+}
+
+.row-2 {
+	background-color: yellow;
+	color: red;
+}
+
+.row-completed {
+	background-color: black;
+	color: white;
+}
+
+.tasks-table button {
+	background-color: orange;
+}
+
+.tasks-table button:hover {
+	background-color: black;
+	color: white;
+}
+
+.tasks-table input[type=checkbox]:hover {
+	background-color: black;
+	color: white;
+
+	width: 40px;
+    height: 10px;
+    background: #555;
+    
+    position: relative;
+    border-radius: 10px;
+
+
+}
+
+
