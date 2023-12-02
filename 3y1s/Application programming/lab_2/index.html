@@ -7,21 +7,27 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <form>
+    
         Номер сотрудника:<br>
-        <input class='textfield' type='text' name='employee_number'>
-        <button name='num_search'>Поиск по номеру</button>
+        <input class='textfield' type='text' id="numberInput" name='employee_number'>
+        <button name='num_search' id="submitButton">Поиск по номеру</button>
+        <div id="errorMessage" style="display: none;">
+            <p>Введите корректное число</p>
+            <button id="closeButton">Ок</button>
+        </div>
         <br>
 
         Имя сотрудника:<br/>
-        <input class='textfield' type='text' name='employee_name'>
-        <button name='name_search'>Поиск по имени</button>
+        <input class='textfield' type='text' value="например, Иванов" name='employee_name' id='employeeName'>
+        <button name='name_search' id='searchName'>Поиск по имени</button>
         <br>
         <br>
 
         <button class='btn_empl' name='show_employees'>Информация о всех сотрудниках</button>
         <br>
-    </form>
+    
+
+    
 
     <a id='add_empl' href=''>Добавить нового сотрудника</a>
     <br>
@@ -40,9 +46,9 @@
             <th>Действие</th>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>1</td>
             <td>Иван</td>
             <td>Администратор базы данных</td>
@@ -51,9 +57,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>2</td>
             <td>Доминика</td>
             <td>ERP-программист</td>
@@ -62,9 +68,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>3</td>
             <td>Октябрина</td>
             <td>Модератор форума</td>
@@ -73,9 +79,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>4</td>
             <td>Лада</td>
             <td>Системный администратор</td>
@@ -84,9 +90,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>5</td>
             <td>Максим Маслов</td>
             <td>Технический писатель</td>
@@ -95,9 +101,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>6</td>
             <td>Евгений</td>
             <td>Специалист по информационной безопасности</td>
@@ -106,9 +112,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>7</td>
             <td>Надежда</td>
             <td>QA-инженер</td>
@@ -117,20 +123,20 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>8</td>
-            <td>Генриетта</td>
+            <td>Василиса</td>
             <td>SEO-специалист</td>
             <td>4 августа 1978 года</td>
             <td>008</td>
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>9</td>
             <td>Остап</td>
             <td>Data Scientist</td>
@@ -139,9 +145,9 @@
             <td></td>
         </tr>
         <tr>
-            <th>
-                <input type='checkbox'>
-            </th>
+            <td>
+                <input type='checkbox' class='yourClassName'>
+            </td>
             <td>10</td>
             <td>Мечислав</td>
             <td>Embedded-программист</td>
@@ -151,8 +157,12 @@
         </tr>
         <tr>
             <td colspan='6'></td>
-            <td><a href>Удалить</a></td>
+            <td><a id='deleteButton' href='#'>Удалить</a></td>
         </tr>
     </table>
-    
+
+    <script type="text/javascript" src="script.js"></script>
+
+
+
 </body>
