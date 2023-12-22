@@ -15,37 +15,44 @@
             <div class="task-flag"><input type="checkbox">Comlete</button></div>
         </div>
     </div> -->
-    <a href="addNewTask.html" target="_blank" class="center">
+    <a href="addNewTask.html" class="center">
         <button class="button">Add new task...</button>
     </a>
-    <table class="center tasks-table">
+    <table class="tasks-table">
         <tr>
-            <th>№</th>
-            <th>Text</th>
-            <th>Completed</th>
-            <th>Option</th>
+            <th>To do</th>
+            <th>In progress</th>
+            <th>Done</th>
         </tr>
-        <tr class="row-1">
-            <td>1</td>
-            <td>Some text</td>
-            <td>
-                <div class="checkbox-rect">
-                    <input type="checkbox">
-                </div>
+        <tr>
+            <td class="s-todo">
+                Some text<br><br>
+                <input type="checkbox" name="progress">
+                <button>Delete</button>
+                <input type="checkbox" name="done">
             </td>
-            <td><button>Delete</button></td>
+            <td></td>
+            <td></td>
         </tr>
-        <tr class="row-2">
-            <td>2</td>
-            <td>Some text 2</td>
-            <td><input type="checkbox"></td>
-            <td><button>Delete</button></td>
+        <tr>
+            <td></td>
+            <td class="s-progress">
+                Some text 2<br><br>
+                <input type="checkbox" name="progress">
+                <button>Delete</button>
+                <input type="checkbox" name="done">
+            </td>
+            <td></td>
         </tr>
-        <tr class="row-1">
-            <td>3</td>
-            <td>Some text 3</td>
-            <td><input type="checkbox"></td>
-            <td><button>Delete</button></td>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="s-done">Some text 3
+                <br><br>
+                <input type="checkbox" name="progress">
+                <button>Delete</button>
+                <input type="checkbox" name="done">
+            </td>
         </tr>
     </table>
 </body>

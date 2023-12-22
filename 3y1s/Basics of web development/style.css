@@ -1,3 +1,12 @@
+html {
+	background-color: black;
+	color: white;
+	font-family: monospace;
+
+	width: 100%;
+	height: 100%;
+}
+
 .title {
 	text-align: center;
 	color: red;
@@ -28,34 +37,53 @@
 	height: 50px;
 }
 
+.button:hover {
+	background-color: indigo;
+}
+
 .tasks-table {
-	padding-top: 30px;
+/*	padding-top: 30px;*/
 	text-align: center;
+
+	border-radius: 40px;
+	border: none;
+
+	width: 100%;
 }
 
 .tasks-table th {
-	padding: 10px 40px;
+/*	padding: 10px 40px;*/
 	background-color: gray;
 	color: white;
 }
 
-.row-1 {
+.tasks-table td {
+	padding: 5px;
+}
+
+.s-todo {
 	background-color: red;
 	color: yellow;
 }
 
-.row-2 {
+.s-progress {
 	background-color: yellow;
 	color: red;
 }
 
-.row-completed {
-	background-color: black;
+.s-done {
+	background-color: green;
 	color: white;
 }
 
 .tasks-table button {
 	background-color: orange;
+
+	width: 70px;
+	height: 30px;
+	border-radius: 30px;
+	border: none;
+	box-shadow: 0;
 }
 
 .tasks-table button:hover {
